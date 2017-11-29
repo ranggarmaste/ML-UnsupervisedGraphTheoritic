@@ -1,6 +1,7 @@
 maxs = [0,0,0,0,0,0]
 mins = [10e9, 10e9, 10e9, 10e9, 10e9, 10e9]
 
+count = 0
 
 with open('CensusIncome/CencusIncome.data.txt', 'r') as f:
 		for line in f:
@@ -8,14 +9,19 @@ with open('CensusIncome/CencusIncome.data.txt', 'r') as f:
 				try:
 						p = [int(data[0]), int(data[2]), int(data[4]), int(data[10]), int(data[11]), int(data[12])]
 				except:
-						print(data)
+						pass
+						#print(data)
 
-						
+				
 				for i in range(len(p)):
 						if maxs[i] < p[i]:
 								maxs[i] = p[i]
 						if mins[i] > p[i]:
 								mins[i] = p[i]
+								
+				count += 1
+
+print(count)
 
 dataset = []
 with open('CensusIncome/CencusIncome.data.txt', 'r') as f:
