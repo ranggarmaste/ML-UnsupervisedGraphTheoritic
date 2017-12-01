@@ -9,7 +9,7 @@
 struct Edge
 {
     short src, dest;
-		double weight;
+		float weight;
 };
  
 // a structure to represent a connected, undirected
